@@ -1,8 +1,5 @@
 class Pattern
   def self.get
-    [
-      'b',
-      'a'
-    ]
+    [] #empty ['mikel', 'bower']
   end
 end

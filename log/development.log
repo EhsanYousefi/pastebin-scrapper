@@ -1,0 +1,1643 @@
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateKeywords (20150814192439)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "keywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "word" varchar, "url" varchar, "occur" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150814192439"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateLinks (20150814192544)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150814192544"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLinks (20150814192544)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.7ms)[0m  DROP TABLE "links"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20150814192544"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateKeywords (20150814192439)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "keywords"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20150814192439"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateKeywords (20150814192439)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE "keywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "word" varchar, "url" varchar, "occur" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150814192439"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateLinks (20150814192544)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150814192544"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2015-08-15 00:17:00 +0430
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bootstrap" for ::1 at 2015-08-15 00:17:03 +0430
+Processing by LookupController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NameError (uninitialized constant LookupController::PastebinLookup):
+  app/controllers/lookup_controller.rb:5:in `index'
+
+
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.7ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.2ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (101.8ms)
+
+
+Started GET "/bootstrap" for ::1 at 2015-08-15 00:19:09 +0430
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LookupController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `every' for #<LookupController:0x007ffab506ba50>):
+  app/controllers/lookup_controller.rb:7:in `index'
+
+
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.9ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (36.2ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (82.0ms)
+
+
+Started GET "/bootstrap" for ::1 at 2015-08-15 00:29:13 +0430
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LookupController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+Capybara::DriverNotFoundError (no driver called :poltergeist was found, available drivers: :rack_test, :selenium):
+  lib/pastebin_lookup.rb:12:in `extract!'
+  app/controllers/lookup_controller.rb:9:in `block in index'
+  app/controllers/lookup_controller.rb:8:in `loop'
+  app/controllers/lookup_controller.rb:8:in `index'
+
+
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.8ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (35.2ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (78.4ms)
+
+
+Started GET "/" for ::1 at 2015-08-15 00:30:51 +0430
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bootstrap" for ::1 at 2015-08-15 00:30:54 +0430
+Processing by LookupController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+Capybara::DriverNotFoundError (no driver called :poltergeist was found, available drivers: :rack_test, :selenium):
+  lib/pastebin_lookup.rb:12:in `extract!'
+  app/controllers/lookup_controller.rb:9:in `block in index'
+  app/controllers/lookup_controller.rb:8:in `loop'
+  app/controllers/lookup_controller.rb:8:in `index'
+
+
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.0ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (35.9ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (81.7ms)
+
+
+Started GET "/" for ::1 at 2015-08-15 00:31:44 +0430
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bootstrap" for ::1 at 2015-08-15 00:31:47 +0430
+Processing by LookupController#index as HTML
+  [1m[36mLink Load (2.4ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (1.4ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[36mLink Load (2.0ms)[0m  [1mSELECT "links".* FROM "links"[0m
+Completed 500 Internal Server Error in 124429ms
+
+
+Started GET "/bootstrap" for ::1 at 2015-08-15 00:34:06 +0430
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LookupController#index as HTML
+  [1m[36mLink Load (2.0ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+Completed   in 58279ms
+
+
+Started GET "/bootstrap" for ::1 at 2015-08-15 00:35:10 +0430
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LookupController#index as HTML
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Completed 500 Internal Server Error in 52008ms
+
+
+Started GET "/bootstrap" for ::1 at 2015-08-15 00:36:15 +0430
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LookupController#index as HTML
+Completed   in 82906ms
+  [1m[35mLink Load (1.0ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (3.6ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.4ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (3.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[36mLink Load (3.9ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[36mLink Load (3.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.2ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.2ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.5ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.3ms)[0m  SELECT "links".* FROM "links"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.6ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/2UautiSk' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/2UautiSk"], ["created_at", "2015-08-14 21:44:02.706795"], ["updated_at", "2015-08-14 21:44:02.706795"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/archive/text"], ["created_at", "2015-08-14 21:44:02.710801"], ["updated_at", "2015-08-14 21:44:02.710801"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/3PTmVQzZ' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/3PTmVQzZ"], ["created_at", "2015-08-14 21:44:02.713856"], ["updated_at", "2015-08-14 21:44:02.713856"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/iGk3edKg' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/iGk3edKg"], ["created_at", "2015-08-14 21:44:02.725946"], ["updated_at", "2015-08-14 21:44:02.725946"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/r1tFSpBM' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/r1tFSpBM"], ["created_at", "2015-08-14 21:44:02.730703"], ["updated_at", "2015-08-14 21:44:02.730703"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/LzPsPgbv' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/LzPsPgbv"], ["created_at", "2015-08-14 21:44:02.734773"], ["updated_at", "2015-08-14 21:44:02.734773"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/hERscRE1' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/hERscRE1"], ["created_at", "2015-08-14 21:44:02.738709"], ["updated_at", "2015-08-14 21:44:02.738709"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/TinsfKs2' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/TinsfKs2"], ["created_at", "2015-08-14 21:44:02.743051"], ["updated_at", "2015-08-14 21:44:02.743051"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/W2zhb5CD' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/W2zhb5CD"], ["created_at", "2015-08-14 21:44:02.746932"], ["updated_at", "2015-08-14 21:44:02.746932"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/tJC5efm4' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/tJC5efm4"], ["created_at", "2015-08-14 21:44:02.751551"], ["updated_at", "2015-08-14 21:44:02.751551"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/fNsvth46' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/fNsvth46"], ["created_at", "2015-08-14 21:44:02.755356"], ["updated_at", "2015-08-14 21:44:02.755356"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/java' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/archive/java"], ["created_at", "2015-08-14 21:44:02.757878"], ["updated_at", "2015-08-14 21:44:02.757878"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/ecfeumt0' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/ecfeumt0"], ["created_at", "2015-08-14 21:44:02.760309"], ["updated_at", "2015-08-14 21:44:02.760309"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/jgrk5Tr1' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/jgrk5Tr1"], ["created_at", "2015-08-14 21:44:02.764487"], ["updated_at", "2015-08-14 21:44:02.764487"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/DnMA5UTi' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/DnMA5UTi"], ["created_at", "2015-08-14 21:44:02.768909"], ["updated_at", "2015-08-14 21:44:02.768909"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/h6uf7eXu' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/h6uf7eXu"], ["created_at", "2015-08-14 21:44:02.772911"], ["updated_at", "2015-08-14 21:44:02.772911"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/MVAgzqgh' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/MVAgzqgh"], ["created_at", "2015-08-14 21:44:02.777392"], ["updated_at", "2015-08-14 21:44:02.777392"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/ZbH1q6vj' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/ZbH1q6vj"], ["created_at", "2015-08-14 21:44:02.782072"], ["updated_at", "2015-08-14 21:44:02.782072"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/CjkVM6FW' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/CjkVM6FW"], ["created_at", "2015-08-14 21:44:02.785990"], ["updated_at", "2015-08-14 21:44:02.785990"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/MQxgSKP5' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/MQxgSKP5"], ["created_at", "2015-08-14 21:44:02.790477"], ["updated_at", "2015-08-14 21:44:02.790477"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/rvmf43Jz' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/rvmf43Jz"], ["created_at", "2015-08-14 21:44:02.794531"], ["updated_at", "2015-08-14 21:44:02.794531"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/b2nKNERF' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/b2nKNERF"], ["created_at", "2015-08-14 21:44:02.799017"], ["updated_at", "2015-08-14 21:44:02.799017"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/Tkv6hbjZ' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/Tkv6hbjZ"], ["created_at", "2015-08-14 21:44:02.803547"], ["updated_at", "2015-08-14 21:44:02.803547"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/G0YWLmmz' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/G0YWLmmz"], ["created_at", "2015-08-14 21:44:02.807465"], ["updated_at", "2015-08-14 21:44:02.807465"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/csharp' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/archive/csharp"], ["created_at", "2015-08-14 21:44:02.809848"], ["updated_at", "2015-08-14 21:44:02.809848"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/S0YC6Gix' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/S0YC6Gix"], ["created_at", "2015-08-14 21:44:02.812290"], ["updated_at", "2015-08-14 21:44:02.812290"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/9XjaTqMw' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/9XjaTqMw"], ["created_at", "2015-08-14 21:44:02.818991"], ["updated_at", "2015-08-14 21:44:02.818991"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/7UADkLNK' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/7UADkLNK"], ["created_at", "2015-08-14 21:44:02.823214"], ["updated_at", "2015-08-14 21:44:02.823214"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/CsnsXMng' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/CsnsXMng"], ["created_at", "2015-08-14 21:44:14.521060"], ["updated_at", "2015-08-14 21:44:14.521060"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/2UautiSk' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/3PTmVQzZ' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/iGk3edKg' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/r1tFSpBM' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/LzPsPgbv' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/hERscRE1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/TinsfKs2' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/W2zhb5CD' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/tJC5efm4' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/fNsvth46' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/java' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/ecfeumt0' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/jgrk5Tr1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/DnMA5UTi' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/h6uf7eXu' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/MVAgzqgh' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/ZbH1q6vj' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/CjkVM6FW' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/MQxgSKP5' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/rvmf43Jz' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/b2nKNERF' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/Tkv6hbjZ' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/G0YWLmmz' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/csharp' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/S0YC6Gix' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/9XjaTqMw' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mLink Load (2.0ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.5ms)[0m  SELECT "links".* FROM "links"
+  [1m[36mLink Load (0.7ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[35mLink Load (0.6ms)[0m  SELECT "links".* FROM "links"
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/SfrhB1Cq' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/SfrhB1Cq"], ["created_at", "2015-08-14 21:44:25.281317"], ["updated_at", "2015-08-14 21:44:25.281317"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/Hj9WnMcF' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/Hj9WnMcF"], ["created_at", "2015-08-14 21:44:25.295018"], ["updated_at", "2015-08-14 21:44:25.295018"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/VvU5Lfux' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/VvU5Lfux"], ["created_at", "2015-08-14 21:44:25.299607"], ["updated_at", "2015-08-14 21:44:25.299607"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/jAC0yGbk' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/jAC0yGbk"], ["created_at", "2015-08-14 21:44:25.303976"], ["updated_at", "2015-08-14 21:44:25.303976"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/CsnsXMng' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/2UautiSk' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/3PTmVQzZ' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/iGk3edKg' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/r1tFSpBM' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/LzPsPgbv' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/hERscRE1' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/TinsfKs2' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/W2zhb5CD' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/tJC5efm4' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/fNsvth46' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/java' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/gSEPuw7y' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/gSEPuw7y"], ["created_at", "2015-08-14 21:44:25.336928"], ["updated_at", "2015-08-14 21:44:25.336928"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.3ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/ecfeumt0' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/jgrk5Tr1' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/DnMA5UTi' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/h6uf7eXu' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/MVAgzqgh' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/ZbH1q6vj' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/CjkVM6FW' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/MQxgSKP5' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/rvmf43Jz' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/SfrhB1Cq' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/Hj9WnMcF' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/VvU5Lfux' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/jAC0yGbk' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/CsnsXMng' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/2UautiSk' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/3PTmVQzZ' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/iGk3edKg' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/r1tFSpBM' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/LzPsPgbv' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/hERscRE1' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/TinsfKs2' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/W2zhb5CD' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/tJC5efm4' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/fNsvth46' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/java' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/gSEPuw7y' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/ecfeumt0' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/jgrk5Tr1' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/DnMA5UTi' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/h6uf7eXu' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/MVAgzqgh' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/ZbH1q6vj' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/CjkVM6FW' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/MQxgSKP5' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/rvmf43Jz' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/fdYQrMmf' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/fdYQrMmf"], ["created_at", "2015-08-14 21:44:47.021681"], ["updated_at", "2015-08-14 21:44:47.021681"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/SfrhB1Cq' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/Hj9WnMcF' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/VvU5Lfux' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/jAC0yGbk' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/CsnsXMng' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/2UautiSk' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/3PTmVQzZ' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/iGk3edKg' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/r1tFSpBM' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/LzPsPgbv' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/hERscRE1' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/TinsfKs2' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/W2zhb5CD' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/tJC5efm4' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/fNsvth46' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/java' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/gSEPuw7y' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/ecfeumt0' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/jgrk5Tr1' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/DnMA5UTi' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/h6uf7eXu' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/MVAgzqgh' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/ZbH1q6vj' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/CjkVM6FW' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/MQxgSKP5' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLinks (20150814192544)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.4ms)[0m  DROP TABLE "links"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20150814192544"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateKeywords (20150814192439)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  DROP TABLE "keywords"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20150814192439"]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateKeywords (20150814192439)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "keywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "word" varchar, "url" varchar, "occur" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150814192439"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateLinks (20150814192544)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150814192544"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.6ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/TVX24fbp' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/TVX24fbp"], ["created_at", "2015-08-15 17:56:44.135091"], ["updated_at", "2015-08-15 17:56:44.135091"]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.6ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/3UWUSrDm' LIMIT 1
+  [1m[36mSQL (3.0ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/3UWUSrDm"], ["created_at", "2015-08-15 17:59:16.487950"], ["updated_at", "2015-08-15 17:59:16.487950"]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/3AwQU9pK' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/3AwQU9pK"], ["created_at", "2015-08-15 17:59:43.840361"], ["updated_at", "2015-08-15 17:59:43.840361"]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/aRaGNfuh' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/aRaGNfuh"], ["created_at", "2015-08-15 18:01:15.479749"], ["updated_at", "2015-08-15 18:01:15.479749"]]
+  [1m[35m (7.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (1.0ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/Y4Esynz3' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/Y4Esynz3"], ["created_at", "2015-08-15 18:02:57.960947"], ["updated_at", "2015-08-15 18:02:57.960947"]]
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLinks (20150814192544)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.4ms)[0m  DROP TABLE "links"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20150814192544"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateLinks (20150814192544)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150814192544"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (8.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  select sqlite_version(*)
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateKeywords (20150814192439)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "keywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "word" varchar, "url" varchar, "occur" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150814192439"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreateLinks (20150814192544)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150814192544"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.5ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/PYTFNagv' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/PYTFNagv"], ["created_at", "2015-08-15 18:05:38.830430"], ["updated_at", "2015-08-15 18:05:38.830430"]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateKeywords (20150814192439)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "keywords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "pattern" varchar, "word" varchar, "url" varchar, "occur" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150814192439"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateLinks (20150814192544)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "links" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150814192544"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/mwziuXyk' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/mwziuXyk"], ["created_at", "2015-08-15 18:06:12.851411"], ["updated_at", "2015-08-15 18:06:12.851411"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/mwziuXyk"], ["occur", 2840], ["created_at", "2015-08-15 18:06:16.019381"], ["updated_at", "2015-08-15 18:06:16.019381"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/mwziuXyk"], ["occur", 22801], ["created_at", "2015-08-15 18:06:16.029650"], ["updated_at", "2015-08-15 18:06:16.029650"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/archive/text"], ["created_at", "2015-08-15 18:06:16.032733"], ["updated_at", "2015-08-15 18:06:16.032733"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/archive/text"], ["occur", 187], ["created_at", "2015-08-15 18:06:16.835940"], ["updated_at", "2015-08-15 18:06:16.835940"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/archive/text"], ["occur", 914], ["created_at", "2015-08-15 18:06:16.838385"], ["updated_at", "2015-08-15 18:06:16.838385"]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/72fYZnLX' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/72fYZnLX"], ["created_at", "2015-08-15 18:06:16.850510"], ["updated_at", "2015-08-15 18:06:16.850510"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/72fYZnLX"], ["occur", 223], ["created_at", "2015-08-15 18:06:17.778113"], ["updated_at", "2015-08-15 18:06:17.778113"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/72fYZnLX"], ["occur", 857], ["created_at", "2015-08-15 18:06:17.779885"], ["updated_at", "2015-08-15 18:06:17.779885"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/utLqcPTi' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/utLqcPTi"], ["created_at", "2015-08-15 18:06:17.792302"], ["updated_at", "2015-08-15 18:06:17.792302"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/utLqcPTi"], ["occur", 528], ["created_at", "2015-08-15 18:06:18.288433"], ["updated_at", "2015-08-15 18:06:18.288433"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/utLqcPTi"], ["occur", 971], ["created_at", "2015-08-15 18:06:18.290152"], ["updated_at", "2015-08-15 18:06:18.290152"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/N4Xjb2F1' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/N4Xjb2F1"], ["created_at", "2015-08-15 18:06:18.304423"], ["updated_at", "2015-08-15 18:06:18.304423"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/N4Xjb2F1"], ["occur", 221], ["created_at", "2015-08-15 18:06:18.860422"], ["updated_at", "2015-08-15 18:06:18.860422"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/N4Xjb2F1"], ["occur", 820], ["created_at", "2015-08-15 18:06:18.862081"], ["updated_at", "2015-08-15 18:06:18.862081"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/HWH2hXZF' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/HWH2hXZF"], ["created_at", "2015-08-15 18:06:18.875993"], ["updated_at", "2015-08-15 18:06:18.875993"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/HWH2hXZF"], ["occur", 1002], ["created_at", "2015-08-15 18:06:19.785548"], ["updated_at", "2015-08-15 18:06:19.785548"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/HWH2hXZF"], ["occur", 4208], ["created_at", "2015-08-15 18:06:19.789805"], ["updated_at", "2015-08-15 18:06:19.789805"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/Yh1JHUzw' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/Yh1JHUzw"], ["created_at", "2015-08-15 18:06:19.803406"], ["updated_at", "2015-08-15 18:06:19.803406"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/Yh1JHUzw"], ["occur", 1556], ["created_at", "2015-08-15 18:06:20.327185"], ["updated_at", "2015-08-15 18:06:20.327185"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/Yh1JHUzw"], ["occur", 4335], ["created_at", "2015-08-15 18:06:20.330100"], ["updated_at", "2015-08-15 18:06:20.330100"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/m9fyn3kP' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/m9fyn3kP"], ["created_at", "2015-08-15 18:06:20.343998"], ["updated_at", "2015-08-15 18:06:20.343998"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/m9fyn3kP"], ["occur", 207], ["created_at", "2015-08-15 18:06:20.835874"], ["updated_at", "2015-08-15 18:06:20.835874"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/m9fyn3kP"], ["occur", 787], ["created_at", "2015-08-15 18:06:20.837982"], ["updated_at", "2015-08-15 18:06:20.837982"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/PYTFNagv' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/PYTFNagv"], ["created_at", "2015-08-15 18:06:20.843060"], ["updated_at", "2015-08-15 18:06:20.843060"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/PYTFNagv"], ["occur", 227], ["created_at", "2015-08-15 18:06:21.634748"], ["updated_at", "2015-08-15 18:06:21.634748"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/PYTFNagv"], ["occur", 869], ["created_at", "2015-08-15 18:06:21.636443"], ["updated_at", "2015-08-15 18:06:21.636443"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/VmJuhHW9' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/VmJuhHW9"], ["created_at", "2015-08-15 18:06:21.649746"], ["updated_at", "2015-08-15 18:06:21.649746"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/VmJuhHW9"], ["occur", 283], ["created_at", "2015-08-15 18:06:22.544950"], ["updated_at", "2015-08-15 18:06:22.544950"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/VmJuhHW9"], ["occur", 1113], ["created_at", "2015-08-15 18:06:22.546712"], ["updated_at", "2015-08-15 18:06:22.546712"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/yvuMbtXu' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/yvuMbtXu"], ["created_at", "2015-08-15 18:06:22.560614"], ["updated_at", "2015-08-15 18:06:22.560614"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/yvuMbtXu"], ["occur", 1166], ["created_at", "2015-08-15 18:06:23.467974"], ["updated_at", "2015-08-15 18:06:23.467974"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/yvuMbtXu"], ["occur", 2136], ["created_at", "2015-08-15 18:06:23.470196"], ["updated_at", "2015-08-15 18:06:23.470196"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/csharp' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/archive/csharp"], ["created_at", "2015-08-15 18:06:23.481924"], ["updated_at", "2015-08-15 18:06:23.481924"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/archive/csharp"], ["occur", 180], ["created_at", "2015-08-15 18:06:24.489961"], ["updated_at", "2015-08-15 18:06:24.489961"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/archive/csharp"], ["occur", 930], ["created_at", "2015-08-15 18:06:24.491645"], ["updated_at", "2015-08-15 18:06:24.491645"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/CFEHm9eZ' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/CFEHm9eZ"], ["created_at", "2015-08-15 18:06:24.503423"], ["updated_at", "2015-08-15 18:06:24.503423"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/CFEHm9eZ"], ["occur", 214], ["created_at", "2015-08-15 18:06:25.340616"], ["updated_at", "2015-08-15 18:06:25.340616"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/CFEHm9eZ"], ["occur", 825], ["created_at", "2015-08-15 18:06:25.342333"], ["updated_at", "2015-08-15 18:06:25.342333"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/NjKjaT1k' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/NjKjaT1k"], ["created_at", "2015-08-15 18:06:25.355488"], ["updated_at", "2015-08-15 18:06:25.355488"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/NjKjaT1k"], ["occur", 656], ["created_at", "2015-08-15 18:06:26.272039"], ["updated_at", "2015-08-15 18:06:26.272039"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/NjKjaT1k"], ["occur", 1356], ["created_at", "2015-08-15 18:06:26.273923"], ["updated_at", "2015-08-15 18:06:26.273923"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/m4qif7g8' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/m4qif7g8"], ["created_at", "2015-08-15 18:06:26.287492"], ["updated_at", "2015-08-15 18:06:26.287492"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/m4qif7g8"], ["occur", 2602], ["created_at", "2015-08-15 18:06:27.321081"], ["updated_at", "2015-08-15 18:06:27.321081"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/m4qif7g8"], ["occur", 2593], ["created_at", "2015-08-15 18:06:27.323444"], ["updated_at", "2015-08-15 18:06:27.323444"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/escnUq5v' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/escnUq5v"], ["created_at", "2015-08-15 18:06:27.337304"], ["updated_at", "2015-08-15 18:06:27.337304"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/escnUq5v"], ["occur", 329], ["created_at", "2015-08-15 18:06:27.869760"], ["updated_at", "2015-08-15 18:06:27.869760"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/escnUq5v"], ["occur", 1174], ["created_at", "2015-08-15 18:06:27.871504"], ["updated_at", "2015-08-15 18:06:27.871504"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/UxNXuZyH' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/UxNXuZyH"], ["created_at", "2015-08-15 18:06:27.885434"], ["updated_at", "2015-08-15 18:06:27.885434"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/UxNXuZyH"], ["occur", 462], ["created_at", "2015-08-15 18:06:29.101540"], ["updated_at", "2015-08-15 18:06:29.101540"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/UxNXuZyH"], ["occur", 3555], ["created_at", "2015-08-15 18:06:29.104431"], ["updated_at", "2015-08-15 18:06:29.104431"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/iehrR3pA' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/iehrR3pA"], ["created_at", "2015-08-15 18:06:29.118338"], ["updated_at", "2015-08-15 18:06:29.118338"]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/iehrR3pA"], ["occur", 207], ["created_at", "2015-08-15 18:06:29.712616"], ["updated_at", "2015-08-15 18:06:29.712616"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/iehrR3pA"], ["occur", 812], ["created_at", "2015-08-15 18:06:29.714689"], ["updated_at", "2015-08-15 18:06:29.714689"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/QYLe3iAM' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/QYLe3iAM"], ["created_at", "2015-08-15 18:06:29.728501"], ["updated_at", "2015-08-15 18:06:29.728501"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/QYLe3iAM"], ["occur", 207], ["created_at", "2015-08-15 18:06:30.632599"], ["updated_at", "2015-08-15 18:06:30.632599"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/QYLe3iAM"], ["occur", 796], ["created_at", "2015-08-15 18:06:30.634321"], ["updated_at", "2015-08-15 18:06:30.634321"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/EsdnJ3fb' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/EsdnJ3fb"], ["created_at", "2015-08-15 18:06:30.648343"], ["updated_at", "2015-08-15 18:06:30.648343"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/EsdnJ3fb"], ["occur", 243], ["created_at", "2015-08-15 18:06:31.146480"], ["updated_at", "2015-08-15 18:06:31.146480"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/EsdnJ3fb"], ["occur", 848], ["created_at", "2015-08-15 18:06:31.148178"], ["updated_at", "2015-08-15 18:06:31.148178"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/KVbYzNGL' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/KVbYzNGL"], ["created_at", "2015-08-15 18:06:31.161916"], ["updated_at", "2015-08-15 18:06:31.161916"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/KVbYzNGL"], ["occur", 654], ["created_at", "2015-08-15 18:06:32.069343"], ["updated_at", "2015-08-15 18:06:32.069343"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/KVbYzNGL"], ["occur", 2525], ["created_at", "2015-08-15 18:06:32.071806"], ["updated_at", "2015-08-15 18:06:32.071806"]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/lua' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/archive/lua"], ["created_at", "2015-08-15 18:06:32.083640"], ["updated_at", "2015-08-15 18:06:32.083640"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/archive/lua"], ["occur", 188], ["created_at", "2015-08-15 18:06:33.012842"], ["updated_at", "2015-08-15 18:06:33.012842"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/archive/lua"], ["occur", 961], ["created_at", "2015-08-15 18:06:33.014611"], ["updated_at", "2015-08-15 18:06:33.014611"]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/8J38L9dH' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/8J38L9dH"], ["created_at", "2015-08-15 18:06:33.025057"], ["updated_at", "2015-08-15 18:06:33.025057"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/8J38L9dH"], ["occur", 440], ["created_at", "2015-08-15 18:06:34.321273"], ["updated_at", "2015-08-15 18:06:34.321273"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/8J38L9dH"], ["occur", 1146], ["created_at", "2015-08-15 18:06:34.323212"], ["updated_at", "2015-08-15 18:06:34.323212"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/WXnHseuX' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/WXnHseuX"], ["created_at", "2015-08-15 18:06:34.327944"], ["updated_at", "2015-08-15 18:06:34.327944"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/WXnHseuX"], ["occur", 209], ["created_at", "2015-08-15 18:06:35.241995"], ["updated_at", "2015-08-15 18:06:35.241995"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/WXnHseuX"], ["occur", 818], ["created_at", "2015-08-15 18:06:35.243676"], ["updated_at", "2015-08-15 18:06:35.243676"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/nmf3tXFk' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/nmf3tXFk"], ["created_at", "2015-08-15 18:06:35.257831"], ["updated_at", "2015-08-15 18:06:35.257831"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/nmf3tXFk"], ["occur", 273], ["created_at", "2015-08-15 18:06:36.164752"], ["updated_at", "2015-08-15 18:06:36.164752"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/nmf3tXFk"], ["occur", 1308], ["created_at", "2015-08-15 18:06:36.166694"], ["updated_at", "2015-08-15 18:06:36.166694"]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/Yrex7NhT' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/Yrex7NhT"], ["created_at", "2015-08-15 18:06:36.179168"], ["updated_at", "2015-08-15 18:06:36.179168"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/Yrex7NhT"], ["occur", 808], ["created_at", "2015-08-15 18:06:37.087064"], ["updated_at", "2015-08-15 18:06:37.087064"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/Yrex7NhT"], ["occur", 1294], ["created_at", "2015-08-15 18:06:37.088965"], ["updated_at", "2015-08-15 18:06:37.088965"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/RjbV5mMz' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/RjbV5mMz"], ["created_at", "2015-08-15 18:06:37.102072"], ["updated_at", "2015-08-15 18:06:37.102072"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/RjbV5mMz"], ["occur", 253], ["created_at", "2015-08-15 18:06:37.597675"], ["updated_at", "2015-08-15 18:06:37.597675"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/RjbV5mMz"], ["occur", 792], ["created_at", "2015-08-15 18:06:37.599376"], ["updated_at", "2015-08-15 18:06:37.599376"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/iH3VgL62' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/iH3VgL62"], ["created_at", "2015-08-15 18:06:37.613717"], ["updated_at", "2015-08-15 18:06:37.613717"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/iH3VgL62"], ["occur", 1150], ["created_at", "2015-08-15 18:06:38.980954"], ["updated_at", "2015-08-15 18:06:38.980954"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/iH3VgL62"], ["occur", 4977], ["created_at", "2015-08-15 18:06:38.985454"], ["updated_at", "2015-08-15 18:06:38.985454"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mLink Load (3.1ms)[0m  [1mSELECT "links".* FROM "links"[0m
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/tfBEb1ss' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/tfBEb1ss"], ["created_at", "2015-08-15 18:06:49.994652"], ["updated_at", "2015-08-15 18:06:49.994652"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/tfBEb1ss"], ["occur", 221], ["created_at", "2015-08-15 18:06:50.609831"], ["updated_at", "2015-08-15 18:06:50.609831"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/tfBEb1ss"], ["occur", 826], ["created_at", "2015-08-15 18:06:50.611622"], ["updated_at", "2015-08-15 18:06:50.611622"]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.3ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/peVGgBtV' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/peVGgBtV"], ["created_at", "2015-08-15 18:06:50.626536"], ["updated_at", "2015-08-15 18:06:50.626536"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/peVGgBtV"], ["occur", 352], ["created_at", "2015-08-15 18:06:51.218191"], ["updated_at", "2015-08-15 18:06:51.218191"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/peVGgBtV"], ["occur", 2415], ["created_at", "2015-08-15 18:06:51.220613"], ["updated_at", "2015-08-15 18:06:51.220613"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/YYmnj0LV' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/YYmnj0LV"], ["created_at", "2015-08-15 18:06:51.235133"], ["updated_at", "2015-08-15 18:06:51.235133"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/YYmnj0LV"], ["occur", 230], ["created_at", "2015-08-15 18:06:51.735082"], ["updated_at", "2015-08-15 18:06:51.735082"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/YYmnj0LV"], ["occur", 967], ["created_at", "2015-08-15 18:06:51.736881"], ["updated_at", "2015-08-15 18:06:51.736881"]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/e8NfMqnQ' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/e8NfMqnQ"], ["created_at", "2015-08-15 18:06:51.750451"], ["updated_at", "2015-08-15 18:06:51.750451"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/e8NfMqnQ"], ["occur", 245], ["created_at", "2015-08-15 18:06:52.243166"], ["updated_at", "2015-08-15 18:06:52.243166"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/e8NfMqnQ"], ["occur", 835], ["created_at", "2015-08-15 18:06:52.244957"], ["updated_at", "2015-08-15 18:06:52.244957"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/tzX3vVTh' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/tzX3vVTh"], ["created_at", "2015-08-15 18:06:52.258956"], ["updated_at", "2015-08-15 18:06:52.258956"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/tzX3vVTh"], ["occur", 1087], ["created_at", "2015-08-15 18:06:54.381298"], ["updated_at", "2015-08-15 18:06:54.381298"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/tzX3vVTh"], ["occur", 1272], ["created_at", "2015-08-15 18:06:54.383163"], ["updated_at", "2015-08-15 18:06:54.383163"]]
+  [1m[35m (8.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/csharp' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/ZLUy8CBi' LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/ZLUy8CBi"], ["created_at", "2015-08-15 18:06:54.404554"], ["updated_at", "2015-08-15 18:06:54.404554"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/ZLUy8CBi"], ["occur", 514], ["created_at", "2015-08-15 18:06:54.915134"], ["updated_at", "2015-08-15 18:06:54.915134"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/ZLUy8CBi"], ["occur", 1074], ["created_at", "2015-08-15 18:06:54.917741"], ["updated_at", "2015-08-15 18:06:54.917741"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/php' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/archive/php"], ["created_at", "2015-08-15 18:06:54.930037"], ["updated_at", "2015-08-15 18:06:54.930037"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/archive/php"], ["occur", 181], ["created_at", "2015-08-15 18:06:55.751560"], ["updated_at", "2015-08-15 18:06:55.751560"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/archive/php"], ["occur", 902], ["created_at", "2015-08-15 18:06:55.763150"], ["updated_at", "2015-08-15 18:06:55.763150"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/2VB6h7RD' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/2VB6h7RD"], ["created_at", "2015-08-15 18:06:55.766855"], ["updated_at", "2015-08-15 18:06:55.766855"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/2VB6h7RD"], ["occur", 746], ["created_at", "2015-08-15 18:06:57.362555"], ["updated_at", "2015-08-15 18:06:57.362555"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/2VB6h7RD"], ["occur", 2102], ["created_at", "2015-08-15 18:06:57.364715"], ["updated_at", "2015-08-15 18:06:57.364715"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/9RGb7zEf' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/9RGb7zEf"], ["created_at", "2015-08-15 18:06:57.379899"], ["updated_at", "2015-08-15 18:06:57.379899"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/9RGb7zEf"], ["occur", 393], ["created_at", "2015-08-15 18:06:57.880158"], ["updated_at", "2015-08-15 18:06:57.880158"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/9RGb7zEf"], ["occur", 1384], ["created_at", "2015-08-15 18:06:57.882541"], ["updated_at", "2015-08-15 18:06:57.882541"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/Sa03c0Yf' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/Sa03c0Yf"], ["created_at", "2015-08-15 18:06:57.896816"], ["updated_at", "2015-08-15 18:06:57.896816"]]
+  [1m[35mKeyword Load (2.1ms)[0m  SELECT "keywords".* FROM "keywords"
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/Sa03c0Yf"], ["occur", 288], ["created_at", "2015-08-15 18:06:58.896027"], ["updated_at", "2015-08-15 18:06:58.896027"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/Sa03c0Yf"], ["occur", 885], ["created_at", "2015-08-15 18:06:58.898221"], ["updated_at", "2015-08-15 18:06:58.898221"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/UVjUzTAB' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/UVjUzTAB"], ["created_at", "2015-08-15 18:06:58.913234"], ["updated_at", "2015-08-15 18:06:58.913234"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/UVjUzTAB"], ["occur", 207], ["created_at", "2015-08-15 18:06:59.413385"], ["updated_at", "2015-08-15 18:06:59.413385"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/UVjUzTAB"], ["occur", 791], ["created_at", "2015-08-15 18:06:59.415823"], ["updated_at", "2015-08-15 18:06:59.415823"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/pbhHx7Gx' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)  [["url", "/pbhHx7Gx"], ["created_at", "2015-08-15 18:06:59.420746"], ["updated_at", "2015-08-15 18:06:59.420746"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/pbhHx7Gx"], ["occur", 3234], ["created_at", "2015-08-15 18:07:01.261524"], ["updated_at", "2015-08-15 18:07:01.261524"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/pbhHx7Gx"], ["occur", 8653], ["created_at", "2015-08-15 18:07:01.267619"], ["updated_at", "2015-08-15 18:07:01.267619"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/xHVbxmXF' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/xHVbxmXF"], ["created_at", "2015-08-15 18:07:01.280918"], ["updated_at", "2015-08-15 18:07:01.280918"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/xHVbxmXF"], ["occur", 242], ["created_at", "2015-08-15 18:07:02.172827"], ["updated_at", "2015-08-15 18:07:02.172827"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/xHVbxmXF"], ["occur", 961], ["created_at", "2015-08-15 18:07:02.174636"], ["updated_at", "2015-08-15 18:07:02.174636"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/html4strict' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/archive/html4strict"], ["created_at", "2015-08-15 18:07:02.186772"], ["updated_at", "2015-08-15 18:07:02.186772"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/archive/html4strict"], ["occur", 180], ["created_at", "2015-08-15 18:07:02.678298"], ["updated_at", "2015-08-15 18:07:02.678298"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/archive/html4strict"], ["occur", 898], ["created_at", "2015-08-15 18:07:02.680132"], ["updated_at", "2015-08-15 18:07:02.680132"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/8sZvSM2t' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/8sZvSM2t"], ["created_at", "2015-08-15 18:07:02.692174"], ["updated_at", "2015-08-15 18:07:02.692174"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/8sZvSM2t"], ["occur", 298], ["created_at", "2015-08-15 18:07:03.618571"], ["updated_at", "2015-08-15 18:07:03.618571"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/8sZvSM2t"], ["occur", 1139], ["created_at", "2015-08-15 18:07:03.620647"], ["updated_at", "2015-08-15 18:07:03.620647"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.2ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/java' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "links" ("url", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["url", "/archive/java"], ["created_at", "2015-08-15 18:07:03.632900"], ["updated_at", "2015-08-15 18:07:03.632900"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["pattern", "b"], ["word", "b"], ["url", "http://pastebin.com/archive/java"], ["occur", 176], ["created_at", "2015-08-15 18:07:04.161474"], ["updated_at", "2015-08-15 18:07:04.161474"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "keywords" ("pattern", "word", "url", "occur", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["pattern", "a"], ["word", "a"], ["url", "http://pastebin.com/archive/java"], ["occur", 1003], ["created_at", "2015-08-15 18:07:04.163498"], ["updated_at", "2015-08-15 18:07:04.163498"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/mwziuXyk' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/72fYZnLX' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.4ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/utLqcPTi' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/N4Xjb2F1' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/HWH2hXZF' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/Yh1JHUzw' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/m9fyn3kP' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/PYTFNagv' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/VmJuhHW9' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/yvuMbtXu' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/csharp' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/CFEHm9eZ' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mLink Exists (0.1ms)[0m  SELECT  1 AS one FROM "links" WHERE "links"."url" = '/NjKjaT1k' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mLink Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "links" WHERE "links"."url" = '/archive/text' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mKeyword Load (0.2ms)[0m  [1mSELECT  "keywords".* FROM "keywords"  ORDER BY "keywords"."id" DESC LIMIT 1[0m
+  [1m[35mLink Load (0.1ms)[0m  SELECT  "links".* FROM "links"  ORDER BY "links"."id" DESC LIMIT 1
+  [1m[36mLink Load (0.4ms)[0m  [1mSELECT  "links".* FROM "links"  ORDER BY "links"."id" ASC LIMIT 1[0m
+  [1m[35mLink Load (0.8ms)[0m  SELECT "links".* FROM "links"
+
+
+Started GET "/feed" for ::1 at 2015-08-15 23:08:56 +0430
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RssController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/rss_controller.rb:5:in `index'
+
+
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (53.9ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.2ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (80.9ms)
+
+
+Started GET "/feed" for ::1 at 2015-08-15 23:10:43 +0430
+Processing by RssController#index as HTML
+Completed 406 Not Acceptable in 5ms
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/rss_controller.rb:7:in `index'
+
+
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.2ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (38.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (80.9ms)
+
+
+Started GET "/feed" for ::1 at 2015-08-15 23:16:23 +0430
+Processing by RssController#index as RSS
+  [1m[35mKeyword Load (4.0ms)[0m  SELECT  "keywords".* FROM "keywords"  ORDER BY created_at DESC LIMIT 10000
+  Rendered rss/index.rss.builder (84.7ms)
+Completed 500 Internal Server Error in 97ms
+
+ActionView::Template::Error (undefined method `title' for #<Keyword:0x007fa0ea2d9f78>):
+     8: 
+     9:     for keyword in @keywords
+    10:       xml.item do
+    11:         xml.word keyword.title
+    12:         xml.url keyword.content
+    13:         xml.occurness keyword.occur
+    14:       end
+  app/views/rss/index.rss.builder:11:in `block (4 levels) in _app_views_rss_index_rss_builder___2818796731839716986_70164551352580'
+  app/views/rss/index.rss.builder:10:in `block (3 levels) in _app_views_rss_index_rss_builder___2818796731839716986_70164551352580'
+  app/views/rss/index.rss.builder:9:in `block (2 levels) in _app_views_rss_index_rss_builder___2818796731839716986_70164551352580'
+  app/views/rss/index.rss.builder:3:in `block in _app_views_rss_index_rss_builder___2818796731839716986_70164551352580'
+  app/views/rss/index.rss.builder:2:in `_app_views_rss_index_rss_builder___2818796731839716986_70164551352580'
+  app/controllers/rss_controller.rb:8:in `block (2 levels) in index'
+  app/controllers/rss_controller.rb:7:in `index'
+
+
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.7ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (39.8ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/liberal/.rvm/gems/ruby-2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.1ms)
+
+
+Started GET "/feed" for ::1 at 2015-08-15 23:16:39 +0430
+Processing by RssController#index as RSS
+  [1m[36mKeyword Load (0.8ms)[0m  [1mSELECT  "keywords".* FROM "keywords"  ORDER BY created_at DESC LIMIT 10000[0m
+  Rendered rss/index.rss.builder (20.2ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.8ms)

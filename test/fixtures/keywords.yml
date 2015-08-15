@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  word: MyString
+  url: MyString
+  occur: 1
+
+two:
+  word: MyString
+  url: MyString
+  occur: 1

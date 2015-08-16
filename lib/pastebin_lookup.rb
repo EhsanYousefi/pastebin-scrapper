@@ -40,12 +40,14 @@ module PastebinLookup
     private
 
     def insert_to_database(pattern, array)
-      keyword = Keyword.create(
-        pattern: pattern,
-        word: array.first,
-        url: @url,
-        occur: array.count
-      )
+      unless array.empty?
+        keyword = Keyword.create(
+          pattern: pattern,
+          word: array.first,
+          url: @url,
+          occur: array.count
+        )
+      end
     end
 
   end

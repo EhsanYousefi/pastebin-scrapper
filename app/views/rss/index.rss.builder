@@ -9,8 +9,10 @@ xml.rss :version => "2.0" do
     for keyword in @keywords
       xml.item do
         xml.title(keyword.word)
-        xml.link(keyword.url)
         xml.description(keyword.occur)
+        xml.pubDate(keyword.created_at.to_s(:rfc822))
+        xml.link(keyword.url)
+        xml.guid(keyword.url)
       end
     end
 

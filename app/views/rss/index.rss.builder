@@ -11,7 +11,7 @@ xml.rss :version => "2.0" do
         xml.title(keyword.word)
         xml.description(keyword.occur)
         xml.pubDate(keyword.created_at.to_s(:rfc822))
-        xml.link(keyword.url)
+        xml.link('http://pastebin.com')
         xml.guid(keyword.url)
       end
     end

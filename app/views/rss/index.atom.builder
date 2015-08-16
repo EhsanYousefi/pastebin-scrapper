@@ -1,6 +1,6 @@
 atom_feed :language => 'en-US' do |feed|
   feed.title "PasteBinScrapper"
-  feed.updated @keywods.first.created_at
+  feed.updated @keywords.first.created_at
 
   @keywords.each do |item|
 

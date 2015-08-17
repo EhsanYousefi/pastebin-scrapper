@@ -1,0 +1,7 @@
+$("#keywordModal .header").html('<%= @keyword.word %>');
+$("#keywordModal .content").html('<%= escape_javascript(raw(@keyword.body)) %>');
+
+var content = $("#keywordModal .content").html();
+$("#keywordModal .content").html(content.replace(/<%= @keyword.word %>/gi, '<strong class="boldify">$&</strong>'));
+
+$('.long.modal').modal('show');

@@ -32,20 +32,21 @@ module PastebinLookup
       body = page.body
 
       Pattern.get.each do |pattern|
-        insert_to_database pattern, body.scan(Regexp.new(pattern))
+        insert_to_database pattern, body.scan(Regexp.new(pattern)), page.search("#paste_code").inner_html
       end
 
     end
 
     private
 
-    def insert_to_database(pattern, array)
+    def insert_to_database(pattern, array, body)
       unless array.empty?
         keyword = Keyword.create(
           pattern: pattern,
           word: array.first,
           url: @url,
-          occur: array.count
+          occur: array.count,
+          body: body
         )
       end
     end

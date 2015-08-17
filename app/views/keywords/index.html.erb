@@ -1,0 +1,48 @@
+<div class="center-text">
+  <%= paginate @keywords %>
+</div>
+<div class="ui divider"></div>
+<table class="ui compact celled definition table">
+  <thead class="full-width">
+  <tr>
+    <th></th>
+    <th>Keyword</th>
+    <th>URL</th>
+    <th>Occurness</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @keywords.each do |keyword| %>
+      <tr>
+        <td class="collapsing">
+          <%= link_to '<button class="ui inverted red icon button">
+                        <i class="remove circle icon"></i>
+                        </button>'.html_safe, keyword_path(keyword), remote: true, method: :delete %>
+          <%= link_to '<button class="ui inverted green icon button">
+                        <i class="unhide icon"></i>
+                        </button>'.html_safe, keyword_path(keyword), remote: true %>
+        </td>
+        <td><%= keyword.word %></td>
+        <td><%= link_to keyword.url, keyword.url %></td>
+        <td><%= keyword.occur %></td>
+      </tr>
+  <% end  %>
+  </tbody>
+  <tfoot class="full-width">
+  <tr>
+    <th></th>
+    <th colspan="4">
+      <div class="center-text">
+        <%= paginate @keywords %>
+      </div>
+      <!--<div class="ui small  button">-->
+        <!--Approve-->
+      <!--</div>-->
+      <!--<div class="ui small  disabled button">-->
+        <!--Approve All-->
+      <!--</div>-->
+    </th>
+  </tr>
+  </tfoot>
+</table>
+<%= render 'keywords/modal' %>

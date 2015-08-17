@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'keywords#index'
   get 'feed' => 'rss#index', :as => :feed
+  resources :keywords, only: [:show, :destroy]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

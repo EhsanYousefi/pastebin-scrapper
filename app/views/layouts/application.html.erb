@@ -8,7 +8,11 @@
 </head>
 <body>
 
-<%= yield %>
+    <%= render 'layouts/menu' %>
+    <%= render 'layouts/sidebar' %>
+    <div class="pusher" id="wrapper">
+      <%= yield %>
+    </div>
 
 </body>
 </html>

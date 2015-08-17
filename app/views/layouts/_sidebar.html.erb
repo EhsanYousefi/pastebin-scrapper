@@ -1,0 +1,13 @@
+<div class="ui left visible vertical inverted sidebar labeled icon menu pushed" id="sidebar">
+
+  <%= link_to '<i class="wait icon"></i>Last Hour'.html_safe, root_path(last_hour: true), class: 'item' %>
+
+  <%= link_to '<i class="wait icon"></i>Last Day'.html_safe, root_path(last_day: true), class: 'item' %>
+
+  <%= link_to '<i class="wait icon"></i>Last Week'.html_safe, root_path(last_week: true), class: 'item' %>
+
+  <%= link_to '<i class="wait icon"></i>Last Month'.html_safe, root_path(last_month: true), class: 'item' %>
+
+  <%= link_to '<i class="wait icon"></i>All'.html_safe, root_path, class: 'item' %>
+
+</div>

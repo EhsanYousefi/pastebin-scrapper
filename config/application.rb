@@ -1,7 +1,6 @@
 require File.expand_path('../boot', __FILE__)
-
+require 'kaminari'
 require 'rails/all'
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -24,6 +23,14 @@ module PasteBinScrapper
     config.active_record.raise_in_transactional_callbacks = true
     config.active_job.queue_adapter = :sidekiq
     config.autoload_paths << "#{Rails.root}/lib"
+
+    config.generators do |g|
+      # g.test_framework  :rspec
+      # g.template_engine true
+      g.stylesheets     false
+      g.javascripts     false
+      g.helper          false
+    end
 
   end
 end

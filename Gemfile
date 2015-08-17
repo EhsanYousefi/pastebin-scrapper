@@ -12,6 +12,7 @@ gem 'pry'
 gem 'sidekiq'
 gem 'mechanize'
 gem 'kaminari'
+gem 'thin'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

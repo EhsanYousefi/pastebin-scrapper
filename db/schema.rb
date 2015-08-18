@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150817133800) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "keywords", force: :cascade do |t|
     t.string   "pattern"
     t.string   "word"

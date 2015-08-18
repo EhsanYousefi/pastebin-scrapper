@@ -13,6 +13,7 @@ gem 'sidekiq'
 gem 'mechanize'
 gem 'kaminari'
 gem 'thin'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
